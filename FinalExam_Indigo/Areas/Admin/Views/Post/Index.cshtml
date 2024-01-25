@@ -1,0 +1,47 @@
+﻿
+@model List<Post>
+
+@{
+    int count = 0;
+}
+
+<div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Posts Table</h4>
+                <p class="card-description">
+                    <a asp-action="create" asp-controller="post">Create</a>
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Settings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Post post in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <td>@count</td>
+                                    <td><img src="~/images/@post.ImageUrl"/></td>
+                                    <td>@post.Title</td>
+                                    <td>
+                                        <a class="btn btn-warning btn-info" asp-action="update" asp-controller="post" asp-route-id="@post.Id">Update</a>
+                                        <a class="btn btn-success btn-info" asp-action="details" asp-controller="post" asp-route-id="@post.Id">Details</a>
+                                        <a class="btn btn-danger btn-info" asp-action="delete" asp-controller="post" asp-route-id="@post.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

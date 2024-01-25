@@ -1,0 +1,12 @@
+﻿@model List<Post>
+
+@foreach(Post posts in Model)
+{
+    <div class="card" style="width: 18rem;">
+        <img src="~/images/@posts.ImageUrl" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@posts.Title</h5>
+            <p class="card-text">@posts.Description</p>
+        </div>
+    </div>
+}

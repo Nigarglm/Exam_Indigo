@@ -1,0 +1,27 @@
+﻿@model UpdatePostVM
+
+
+        <div class="card-body">
+            <h4 class="card-title">Update</h4>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="Photo" for="exampleInputUsername1">Photo</label>
+                    <input asp-for="Photo" class="form-control" id="exampleInputUsername1" placeholder="Photo">
+                    <span asp-validation-for="Photo"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title" for="exampleInputUsername1">Title</label>
+                    <input asp-for="Title" type="text" class="form-control" id="exampleInputUsername1" placeholder="Title">
+                    <span asp-validation-for="Title"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" for="exampleInputUsername1">Description</label>
+                    <input asp-for="Description" type="text" class="form-control" id="exampleInputUsername1" placeholder="Description">
+                    <span asp-validation-for="Description"></span>
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <button asp-action="index" asp-controller="post" class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+   
